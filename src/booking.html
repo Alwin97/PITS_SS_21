@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <title>Event booking</title>
+</head>
+<body>
+  <div class="navigation">
+    <h1>Event Buchungs Tool</h1>
+    <div class="logout" id="logout">
+      Logout
+    </div>
+  </div>
+
+  <div class="booking-container">
+    <div class="booking">
+      <form id="booking-form">
+        <label for="salutation-field">Anrede</label>
+        <input type="text" name="salutation" id="salutation-field" class="login-form-field" placeholder="Anrede">
+
+        <label for="first-name-field">Vorname</label>
+        <input type="text" name="firstName" id="first-name-field" class="login-form-field" placeholder="Vorname">
+
+        <label for="name-field">Name</label>
+        <input type="text" name="name" id="name-field" class="login-form-field" placeholder="Name">
+
+        <label for="address-field">Adresse</label>
+        <input type="text" name="adress" id="address-field" class="login-form-field" placeholder="Adresse">
+
+        <label for="street-field">Straße</label>
+        <input type="text" name="street" id="street-field" class="login-form-field" placeholder="Straße">
+
+        <label for="house-number-field">Hausnummer</label>
+        <input type="text" name="houseNumber" id="house-number-field" class="login-form-field" placeholder="Hausnummer">
+
+        <label for="postal-code-field">PLZ</label>
+        <input type="text" name="postalCode" id="postal-code-field" class="login-form-field" placeholder="PLZ">
+
+        <label for="city-field">Ort</label>
+        <input type="text" name="city" id="city-field" class="login-form-field" placeholder="Ort">
+
+        <label for="email-field">E-Mail</label>
+        <input type="text" name="email" id="email-field" class="login-form-field" placeholder="E-Mail">
+
+        <label for="telephone-number-field">Telefonnummer</label>
+        <input type="text" name="telephone" id="telephone-number-field" class="login-form-field" placeholder="Telefonnummer">
+
+        <label for="ticket-amount-field">Anzahl Tickets</label>
+        <input type="text" name="amount" id="ticket-amount-field" class="login-form-field" placeholder="Anzahl Tickets">
+
+        <input type="submit" id="booking-form-submit">
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="js/booking.js"></script>
+</body>
+</html>

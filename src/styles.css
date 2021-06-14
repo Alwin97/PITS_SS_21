@@ -1,0 +1,129 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.navigation {
+  height: 100px;
+  width: 100%;
+  padding-left: 30px;
+  background: linear-gradient(90deg, rgba(170,15,31,0.85) 22%, rgba(215,71,31,0.85) 52%, rgba(144, 27, 110, 0.85) 93%);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+
+.navigation h1 {
+  color: white;
+  font-size: 40px;
+}
+
+.navigation .logout {
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.navigation .show {
+  opacity: 1;
+}
+
+.events-list {
+  margin-top: 100px;
+}
+
+.event {
+  width: 100%;
+  height: 450px;
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.event-image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-image img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.event-information {
+  padding-right: 60px;
+  text-align: justify;
+  font-weight: lighter;
+}
+
+.info-text {
+  margin-bottom: 20px;
+}
+
+button {
+  border: none;
+  background: #901B6E;
+  color: white;
+  font-size: larger;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+button a {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.login-container, .booking-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #901B6E;
+  border-radius: 5px;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+form label {
+  margin-bottom: 10px;
+}
+
+#login-form-submit, #booking-form-submit {
+  border: none;
+  background: #901B6E;
+  color: white;
+  font-size: larger;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+form input:not([type="submit"]) {
+  border: none;
+  border-bottom: 1px solid #D7471F;
+  padding: 5px;
+}
