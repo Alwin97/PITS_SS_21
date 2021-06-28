@@ -41,7 +41,7 @@ function validateCookies(req, res, next) {
 app.post('/login', (req, res) => {
   // check if login data is valid
   if (req.body.username === 'Username' && req.body.password === 'Password1') {
-    res.cookie('login_id', loginToken, {sameSite: req.body.cookieSetting, secure: true, domain: 'http://a-meisenhelter.bplaced.net'});
+    res.cookie('login_id', loginToken, {sameSite: req.body.cookieSetting, secure: true});
     res.status(200).json({message: 'Der Login war erfolgreich'});
   } else {
     res.status(300)
