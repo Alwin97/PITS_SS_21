@@ -10,8 +10,7 @@ const port = process.env.PORT || 80;
 
 // cors options to allow ajax requests
 const corsOptions = {
-  // origin has to be replaced with the location of the website
-  origin: ['http://a-meisenhelter.bplaced.net/'],
+  origin: 'http://a-meisenhelter.bplaced.net/',
   credentials: true,
   optionSuccessStatus: 200
 }
