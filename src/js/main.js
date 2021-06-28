@@ -17,7 +17,9 @@ function getCookie(name) {
   return v ? v[2] : null;
 }
 
-function deleteCookie(name) { setCookie(name, '', -1); }
+function deleteCookie(name) {
+  document.cookie = name + "=" + '' + ";path=/;expires=" + 'Thu, 01 Jan 1970 00:00:01 GMT';
+}
 
 function setCookie(name, value, days) {
   let d = new Date;

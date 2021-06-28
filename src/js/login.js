@@ -18,11 +18,12 @@
     // get username and passwort
     const username = loginForm.username.value;
     const password = loginForm.password.value;
+    const cookieSetting = document.querySelector('input[name="cookie-security"]:checked').value;
 
     // create ajax request with jquery
     $.ajax({
       contentType: 'application/json',
-      data: JSON.stringify({username: username, password: password}),
+      data: JSON.stringify({username: username, password: password, cookieSetting: cookieSetting}),
       dataType: 'json',
       xhrFields: {
         withCredentials: true

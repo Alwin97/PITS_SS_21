@@ -17,6 +17,16 @@
 
   <div class="login-container">
     <div class="login">
+      <div>
+        <p>Wähle die Sicherheit des Login Cookies:</p>
+
+        <input type="radio" id="none" name="cookie-security" value="none" checked>
+        <label for="none">None</label>
+
+        <input type="radio" id="strict" name="cookie-security" value="strict">
+        <label for="strict">Strict</label>
+      </div>
+
       <form id="login-form">
         <label for="username-field">Benutzername</label>
         <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
