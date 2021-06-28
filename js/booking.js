@@ -1,6 +1,6 @@
 // emidiatly executed funtion when js is loaded
 (function () {
-  // redirect if user is not logged in (cookie was not found)
+  // redirect if user is not logged in
   if (!localStorage.getItem('login_id')) {
     window.location.href = 'login.html'
   }
@@ -63,9 +63,3 @@
     });
   })
 })();
-
-// helper function from https://plainjs.com/javascript/utilities/set-cookie-get-cookie-and-delete-cookie-5/
-function getCookie(name) {
-  let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-  return v ? v[2] : null;
-}

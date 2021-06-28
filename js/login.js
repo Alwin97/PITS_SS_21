@@ -1,6 +1,6 @@
 // emidiatly executed funtion when js is loaded
 (function () {
-  // redirect if user is logged in (cookie was found)
+  // redirect if user is logged in
   if (localStorage.getItem('login_id')) {
     window.location.href = 'index.html'
   }
@@ -46,15 +46,3 @@
     });
   })
 })();
-
-// helper functions from https://plainjs.com/javascript/utilities/set-cookie-get-cookie-and-delete-cookie-5/
-function setCookie(name, value, days) {
-  let d = new Date;
-  d.setTime(d.getTime() + 24*60*60*1000*days);
-  document.cookie = name + "=" + value + ";path=/;expires=" + d.toDateString();
-}
-
-function getCookie(name) {
-  let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-  return v ? v[2] : null;
-}
