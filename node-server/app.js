@@ -11,7 +11,6 @@ const port = process.env.PORT || 80;
 // cors options to allow ajax requests
 const corsOptions = {
   origin: 'https://ecg-oberwiehl.de',
-  credentials: true,
   optionSuccessStatus: 200
 }
 
