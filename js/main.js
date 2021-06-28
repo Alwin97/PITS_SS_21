@@ -4,6 +4,7 @@
     let logoutButton = window.document.querySelector('#logout');
     logoutButton.classList.add('show');
     logoutButton.addEventListener('click', () => {
+      localStorage.removeItem('login_id');
       deleteCookie('login_id');
       window.location.reload();
     })

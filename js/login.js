@@ -1,7 +1,7 @@
 // emidiatly executed funtion when js is loaded
 (function () {
   // redirect if user is logged in (cookie was found)
-  if (getCookie('login_id')) {
+  if (localStorage.getItem('login_id')) {
     window.location.href = 'index.html'
   }
 
@@ -34,6 +34,7 @@
         // 'Access-Control-Allow-Origin':'https://pits-projekt.herokuapp.com/'
       },
       success: function (data) {
+        localStorage.setItem('login_id', 'true');
         window.location.href = 'booking.html';
       },
       error: function (data) {

@@ -1,7 +1,7 @@
 // emidiatly executed funtion when js is loaded
 (function () {
   // redirect if user is not logged in (cookie was not found)
-  if (!getCookie('login_id')) {
+  if (!localStorage.getItem('login_id')) {
     window.location.href = 'login.html'
   }
 
