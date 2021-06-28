@@ -6,12 +6,12 @@ const app = express()
 const bodyParser = require('body-parser')
 
 // port for express erver
-const port = 3000
+const port = process.env.PORT || 80;
 
 // cors options to allow ajax requests
 const corsOptions = {
   // origin has to be replaced with the location of the website
-  origin: ['http://localhost:63342'],
+  origin: ['http://a-meisenhelter.bplaced.net/'],
   credentials: true,
   optionSuccessStatus: 200
 }
@@ -41,7 +41,7 @@ function validateCookies(req, res, next) {
 // function to log in
 app.post('/login', (req, res) => {
   // check if login data is valid
-  if (req.body.username === 'Alwin' && req.body.password === 'test') {
+  if (req.body.username === 'Username' && req.body.password === 'Password1') {
     res.cookie('login_id', loginToken, {sameSite: req.body.cookieSetting, secure: true});
     res.status(200).json({message: 'Der Login war erfolgreich'});
   } else {
@@ -60,5 +60,5 @@ app.post('/booking', validateCookies, (req, res) => {
 
 // start express server
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at port:${port}`)
 })
