@@ -11,6 +11,7 @@ const port = process.env.PORT || 80;
 // cors options to allow ajax requests
 const corsOptions = {
   origin: 'https://ecg-oberwiehl.de',
+  credentials: true,
   optionSuccessStatus: 200
 }
 
@@ -41,7 +42,7 @@ app.post('/login', (req, res) => {
   // check if login data is valid
   if (req.body.username === 'Username' && req.body.password === 'Password1') {
     res.cookie('login_id', loginToken, {sameSite: req.body.cookieSetting, secure: true});
-    res.status(200).json({message: 'Der Login war erfolgreich'});
+    // res.status(200).json({message: 'Der Login war erfolgreich'});
   } else {
     res.status(300)
     res.send({
