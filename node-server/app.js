@@ -10,8 +10,7 @@ const port = process.env.PORT || 4200;
 
 // cors options to allow ajax requests
 const corsOptions = {
-  // origin: 'https://ecg-oberwiehl.de',
-  origin: 'http://localhost:63342',
+  origin: 'http://a-meisenhelter.bplaced.net',
   credentials: true,
   optionSuccessStatus: 200
 }
