@@ -9,7 +9,7 @@
   const loginForm = document.getElementById("login-form");
   const loginButton = document.getElementById("login-form-submit");
   // server url
-  const url = 'http://localhost:3000/';
+  const url = 'https://pits-projekt.herokuapp.com/';
 
   // add click listener to submit button
   loginButton.addEventListener("click", (e) => {
@@ -30,7 +30,7 @@
       },
       headers: {
         'Access-Control-Allow-Credentials':'true',
-        'Access-Control-Allow-Origin':'http://localhost:3000'
+        'Access-Control-Allow-Origin':'https://pits-projekt.herokuapp.com/'
       },
       success: function (data) {
         window.location.href = 'booking.html';

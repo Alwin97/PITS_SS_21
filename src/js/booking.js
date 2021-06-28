@@ -9,7 +9,7 @@
   const bookingForm = document.getElementById("booking-form");
   const bookingButton = document.getElementById("booking-form-submit");
   // server url
-  const url = 'http://localhost:3000/';
+  const url = 'https://pits-projekt.herokuapp.com/';
 
   // add click listener to submit button
   bookingButton.addEventListener("click", (e) => {
