@@ -57,6 +57,11 @@ app.post('/booking', validateCookies, (req, res) => {
   console.log('tickets booked -> send to: ', req.body.email);
 })
 
+app.post('/logout', validateCookies, (req, res) =>{
+  res.clearCookie('login_id');
+  res.status(200).json({message: 'cookie wurde gelöscht'});
+})
+
 // start express server
 app.listen(port, () => {
   console.log(`Example app listening at port:${port}`)
