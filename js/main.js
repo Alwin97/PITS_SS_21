@@ -1,34 +1,22 @@
 (function () {
   // show logout button if user is logged in
-  if (localStorage.getItem('login_id')) {
+  if (getCookie('login_id')) {
     let logoutButton = window.document.querySelector('#logout');
     logoutButton.classList.add('show');
     logoutButton.addEventListener('click', () => {
-      localStorage.removeItem('login_id');
+      deleteCookie('login_id');
       window.location.reload();
-
-      const url = 'https://pits-projekt.herokuapp.com/';
-
-      $.ajax({
-        contentType: 'application/json',
-        dataType: 'json',
-        xhrFields: {
-          withCredentials: true
-        },
-        headers: {
-          'Access-Control-Allow-Credentials':'true',
-          // 'Access-Control-Allow-Origin':'https://pits-projekt.herokuapp.com/'
-        },
-        success: function (data) {
-          console.log('success');
-        },
-        error: function (data) {
-          console.log('error');
-        },
-        processData: false,
-        type: 'POST',
-        url: url + 'logout'
-      });
     })
   }
 })();
+
+
+// cookie helper funtions from https://plainjs.com/javascript/utilities/set-cookie-get-cookie-and-delete-cookie-5/
+function getCookie(name) {
+  let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return v ? v[2] : null;
+}
+
+function deleteCookie(name) {
+  document.cookie = name + "=" + '' + ";path=/;expires=" + 'Thu, 01 Jan 1970 00:00:01 GMT';
+}

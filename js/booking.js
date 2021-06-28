@@ -1,7 +1,7 @@
 // emidiatly executed funtion when js is loaded
 (function () {
-  // redirect if user is not logged in
-  if (!localStorage.getItem('login_id')) {
+  // redirect if user is not logged in (cookie was not found)
+  if (!getCookie('login_id')) {
     window.location.href = 'login.html'
   }
 
@@ -9,7 +9,7 @@
   const bookingForm = document.getElementById("booking-form");
   const bookingButton = document.getElementById("booking-form-submit");
   // server url
-  const url = 'https://pits-projekt.herokuapp.com/';
+  const url = 'http://localhost:3000/';
 
   // add click listener to submit button
   bookingButton.addEventListener("click", (e) => {
@@ -63,3 +63,9 @@
     });
   })
 })();
+
+// helper function from https://plainjs.com/javascript/utilities/set-cookie-get-cookie-and-delete-cookie-5/
+function getCookie(name) {
+  let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return v ? v[2] : null;
+}

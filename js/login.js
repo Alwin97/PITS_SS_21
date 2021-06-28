@@ -1,7 +1,7 @@
 // emidiatly executed funtion when js is loaded
 (function () {
-  // redirect if user is logged in
-  if (localStorage.getItem('login_id')) {
+  // redirect if user is logged in (cookie was found)
+  if (getCookie('login_id')) {
     window.location.href = 'index.html'
   }
 
@@ -9,8 +9,7 @@
   const loginForm = document.getElementById("login-form");
   const loginButton = document.getElementById("login-form-submit");
   // server url
-  const url = 'https://pits-projekt.herokuapp.com/';
-  // const url = 'http://localhost:4200/';
+  const url = 'http://localhost:3000/';
 
   // add click listener to submit button
   loginButton.addEventListener("click", (e) => {
@@ -34,7 +33,6 @@
         // 'Access-Control-Allow-Origin':'https://pits-projekt.herokuapp.com/'
       },
       success: function (data) {
-        localStorage.setItem('login_id', 'true');
         window.location.href = 'booking.html';
       },
       error: function (data) {
@@ -46,3 +44,15 @@
     });
   })
 })();
+
+// helper functions from https://plainjs.com/javascript/utilities/set-cookie-get-cookie-and-delete-cookie-5/
+function setCookie(name, value, days) {
+  let d = new Date;
+  d.setTime(d.getTime() + 24*60*60*1000*days);
+  document.cookie = name + "=" + value + ";path=/;expires=" + d.toDateString();
+}
+
+function getCookie(name) {
+  let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return v ? v[2] : null;
+}

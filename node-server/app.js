@@ -6,11 +6,11 @@ const app = express()
 const bodyParser = require('body-parser')
 
 // port for express erver
-const port = process.env.PORT || 4200;
+const port = process.env.PORT || 3000;
 
 // cors options to allow ajax requests
 const corsOptions = {
-  origin: 'http://a-meisenhelter.bplaced.net',
+  origin: 'http://localhost:63342',
   credentials: true,
   optionSuccessStatus: 200
 }
@@ -55,11 +55,6 @@ app.post('/login', (req, res) => {
 app.post('/booking', validateCookies, (req, res) => {
   res.status(200).json({msg: 'Tickets booked. Email has been send to ' + req.body.email});
   console.log('tickets booked -> send to: ', req.body.email);
-})
-
-app.post('/logout', validateCookies, (req, res) =>{
-  res.clearCookie('login_id');
-  res.status(200).json({message: 'cookie wurde gelöscht'});
 })
 
 // start express server
