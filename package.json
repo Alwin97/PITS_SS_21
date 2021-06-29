@@ -4,8 +4,8 @@
   "description": "",
   "main": "public/js/main.js",
   "scripts": {
-    "run BE-server": "nodemon BE-server/app.js",
-    "run FE-server": "nodemon app.js"
+    "run BE-server": "node BE-server/app.js",
+    "run FE-server": "node app.js"
   },
   "author": "",
   "license": "ISC",
