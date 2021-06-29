@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 // cors options to allow ajax requests
 const corsOptions = {
-  origin: 'http://localhost:63342',
+  origin: 'http://localhost:4200',
   credentials: true,
   optionSuccessStatus: 200
 }

@@ -2,11 +2,10 @@
   "name": "src",
   "version": "1.0.0",
   "description": "",
-  "main": "js/main.js",
+  "main": "public/js/main.js",
   "scripts": {
-    "start": "node node-server/app.js",
-    "run server": "node_modules/.bin/nodemon node-server/app.js",
-    "run attack-server": "node_modules/.bin/nodemon attack-website/app.js"
+    "run BE-server": "nodemon BE-server/app.js",
+    "run FE-server": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
